@@ -93,8 +93,10 @@ void write(int x, int y, char data[]){
 void main(){
 	fd = wiringPiI2CSetup(LCDAddr);
 	init();
-	write(0, 0, "Greetings!");
-	write(1, 1, "from Saratoga");
+	//write(0, 0, "Greetings!");
+	//write(1, 1, "from Saratoga");
+	write(0, 0, "Love kenya");
+	write(1, 1, "Coming Saturday? ");
 	delay(2000);
 	// clear();
 }
