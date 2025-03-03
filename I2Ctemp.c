@@ -93,7 +93,7 @@ void write(int x, int y, char data[]){
 
 void temp_display(){
     char letters[10];
-    float temp, humi; 
+    float temp, hum; 
     srand(time(0));
     temp = 0 + rand() % 100;
     hum = 0 + rand() %100;
