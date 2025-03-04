@@ -120,8 +120,7 @@ void temp_display(){
     write(6, 1, str);
 
     //  display time in HH:MM format
-//    snprintf(buffer, sizeof(buffer), "%02d:%02d", hour, minute);
-//    write(12, 1, buffer);
+
 
     sprintf(str, "%02d:%02d", hour, minute);
     write(11, 1, str);
@@ -134,8 +133,6 @@ void main(){
 	fd = wiringPiI2CSetup(LCDAddr);
 	init();
 
-	//write(0, 0, "Love kenya");
-	//write(1, 1, "Coming Saturday? ");
 while (1) {
     temp_display();
     
@@ -143,8 +140,3 @@ while (1) {
     }
 	// clear();
 }
-/*
-
-
-
-*/
