@@ -100,7 +100,7 @@ void temp_display(){
 
     write(0, 0 , "temp");
     write(6, 0 , "hum");
-    write(12, 0 , "time");
+    write(10, 0 , "time");
  
 
 
@@ -124,7 +124,7 @@ void temp_display(){
 //    write(12, 1, buffer);
 
     sprintf(str, "%02d:%02d", hour, minute);
-    write(12, 1, str);
+    write(10, 1, str);
 	
 
 }
