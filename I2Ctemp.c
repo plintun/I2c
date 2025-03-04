@@ -95,7 +95,7 @@ void temp_display(){
     char letters[10];
     float temp, hum; 
     srand(time(0));
-    temp = 0 + rand() % 100;
+    temp = 0 + rand() % 300;
     hum = 0 + rand() %100;
 
     write(0, 0 , "temp");
@@ -108,19 +108,24 @@ void temp_display(){
     int hour = rand() %24;
     int minute = rand()%60;
 
-    char buffer[16];
 
-    snprintf(buffer, sizeof(buffer), "%.2f", temp);
-    write(0, 1, buffer);
+    // display temperature
+     char str[7]; 
+     sprintf(str, "%.1f", temp);
+     write(0, 1, str);
+	
 
-    // Format & display humidity
-    snprintf(buffer, sizeof(buffer), "%.2f", hum);
-    write(6, 1, buffer);
+    // display humidity
+    sprintf(str, "%.1f", hum);
+    write(6, 1, str);
 
-    // Format & display time in HH:MM format
-    snprintf(buffer, sizeof(buffer), "%02d:%02d", hour, minute);
-    write(12, 1, buffer);
+    //  display time in HH:MM format
+//    snprintf(buffer, sizeof(buffer), "%02d:%02d", hour, minute);
+//    write(12, 1, buffer);
 
+    sprintf(str, "%02d:%02d", hour, minute);
+    write(12, 1, str);
+	
 
 }
 
@@ -128,14 +133,13 @@ void temp_display(){
 void main(){
 	fd = wiringPiI2CSetup(LCDAddr);
 	init();
-	//write(0, 0, "Greetings!");
-	//write(1, 1, "from Saratoga");
+
 	//write(0, 0, "Love kenya");
 	//write(1, 1, "Coming Saturday? ");
 while (1) {
     temp_display();
     
-	delay(2000);
+	delay(6000);
     }
 	// clear();
 }
