@@ -95,8 +95,8 @@ void temp_display(){
     char letters[10];
     float temp, hum; 
     srand(time(0));
-    temp = 0 + rand() % 300 + rand()/10;
-    hum = 0 + rand() %100 + rand()/10;
+    temp = 0 + rand() % 300 + (rand() % 10) / 10.0;
+    hum = 0 + rand() %100 + (rand() % 10) / 10.0;
 
     write(0, 0 , "temp");
     write(6, 0 , "hum");
