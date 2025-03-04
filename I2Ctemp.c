@@ -93,7 +93,7 @@ void write(int x, int y, char data[]){
 
 void temp_display(){
     char letters[10];
-    float temp, hum; 
+    int temp, hum; 
     srand(time(0));
     temp = 0 + rand() % 300;
     hum = 0 + rand() %100;
@@ -111,12 +111,12 @@ void temp_display(){
 
     // display temperature
      char str[7]; 
-     sprintf(str, "%.1f", temp);
+     sprintf(str, "%.1f", (float)temp);
      write(0, 1, str);
 	
 
     // display humidity
-    sprintf(str, "%.1f", hum);
+    sprintf(str, "%.1f", (float)hum);
     write(6, 1, str);
 
     //  display time in HH:MM format
